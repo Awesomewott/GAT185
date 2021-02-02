@@ -11,7 +11,7 @@ public class FreeLookCamera : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             Vector3 rotate = Vector3.zero;
             rotate.y = Input.GetAxis("Mouse X");
@@ -19,9 +19,8 @@ public class FreeLookCamera : MonoBehaviour
 
             transform.eulerAngles += rotate * sensitivity;
 
-
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
 
         else
@@ -43,17 +42,17 @@ public class FreeLookCamera : MonoBehaviour
         transform.position += (transform.rotation * (translate * speed * Time.deltaTime));
 
         // Ray cast
-        Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-               GameObject gameObject = Instantiate(explosion, hitInfo.point, Quaternion.identity);
-                Destroy(gameObject, 3);
-            }
+        //Ray ray = new Ray(transform.position, transform.forward);
+        //if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //       GameObject gameObject = Instantiate(explosion, hitInfo.point, Quaternion.identity);
+        //        Destroy(gameObject, 3);
+        //    }
 
-            //hitMarker.transform.position = hitInfo.point;
-            //Debug.Log(hitInfo.collider.gameObject);
-        }
+        //    //hitMarker.transform.position = hitInfo.point;
+        //    //Debug.Log(hitInfo.collider.gameObject);
+        //}
     }
 }
