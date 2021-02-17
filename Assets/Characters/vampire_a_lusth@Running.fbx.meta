@@ -59,11 +59,32 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.19922179
-        functionName: OnFootstep
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+      - time: 0.24662161
+        functionName: OnCreate
+        data: LeftFoot
+        objectReferenceParameter: {fileID: 999187144126630740, guid: cbcc720a726c8f642842806cbfa9aa6a, type: 3}
+        floatParameter: 0.5
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4227027
+        functionName: OnCreate
+        data: RightFoot
+        objectReferenceParameter: {fileID: 999187144126630740, guid: cbcc720a726c8f642842806cbfa9aa6a, type: 3}
+        floatParameter: 0.5
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.70279396
+        functionName: OnCreate
+        data: LeftFoot
+        objectReferenceParameter: {fileID: 999187144126630740, guid: cbcc720a726c8f642842806cbfa9aa6a, type: 3}
+        floatParameter: 0.5
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9160387
+        functionName: OnCreate
+        data: RightFoot
+        objectReferenceParameter: {fileID: 999187144126630740, guid: cbcc720a726c8f642842806cbfa9aa6a, type: 3}
+        floatParameter: 0.5
         intParameter: 0
         messageOptions: 0
       transformMask: []
@@ -880,11 +901,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d3ed9d89d67081e439598547abc8686e, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

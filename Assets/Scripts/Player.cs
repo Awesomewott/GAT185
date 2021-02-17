@@ -1,28 +1,24 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Player : MonoBehaviour
 {
     public float speed = 2.0f;
-    public Weapon[] weapons;
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //Vector3 velocity = Vector3.zero;
+        Vector3 direction = Vector3.zero;
+        direction.x = Input.GetAxis("Horizontal");
+        direction.z = Input.GetAxis("Vertical");
 
-        //velocity.x = Input.GetAxis("Horizontal");
-        //velocity.z = Input.GetAxis("Vertical");
+        Vector3 velocity = direction * speed;
+        transform.position += velocity * Time.deltaTime;
 
-        //if (Input.GetButtonDown("Jump")) velocity.y = 200;
-
-        //transform.position += velocity * speed * Time.deltaTime;
-
-        if (Input.GetButton("Fire1") && Game.Instance.State == Game.eState.Game)
+        if (velocity.sqrMagnitude > 0.1f)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            weapons[0].Fire(ray.origin, ray.direction);
+            transform.rotation = Quaternion.LookRotation(velocity, Vector3.up);
         }
+        transform.position = Utilities.Wrap(transform.position, new Vector3(-20, -20, -20), new Vector3(20, 20, 20));
     }
 }
